@@ -70,8 +70,8 @@
             border: 1px solid #e2e8f0;
             display: flex;
             flex-wrap: wrap;
-            gap: 28px;
-            align-items: flex-end;
+            gap: 28px; 
+    align-items: flex-start;
         }
 
         .input-group {
@@ -327,8 +327,7 @@
 
         .action-buttons {
             display: flex;
-            gap: 12px;
-            align-items: center;
+            gap: 12px; 
         }
     </style>
 </head>
@@ -406,15 +405,12 @@
         </footer>
     </div>
 
-    <script>
-        // Defer entire script execution until DOM is ready for better performance
-        document.addEventListener('DOMContentLoaded', function () {
-            // Configure PDF.js worker (must be after pdf.js loaded)
+    <script> 
+        document.addEventListener('DOMContentLoaded', function () { 
             if (typeof pdfjsLib !== 'undefined') {
                 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
             }
-
-            // DOM elements
+ 
             const pdfInput = document.getElementById('pdfInput');
             const fileStatus = document.getElementById('fileStatus');
             const scaleInput = document.getElementById('scaleInput');
@@ -431,24 +427,19 @@
             const progressBar = document.getElementById('progressBar');
             const statusMsgDiv = document.getElementById('statusMsg');
 
-            // State
             let currentPdfFile = null;
             let pdfDocCache = null;
             let convertingLock = false;
-            let allGeneratedImages = []; // array of { filename, dataURL }
-
-            // Helper to enable/disable batch download button
+            let allGeneratedImages = []; 
             function updateBatchButtonState() {
                 downloadAllBtn.disabled = !allGeneratedImages || allGeneratedImages.length === 0;
             }
 
-            // Clear all images and reset array
             function clearAllImages() {
                 allGeneratedImages = [];
                 updateBatchButtonState();
             }
 
-            // Clear results UI and internal array
             function clearResults() {
                 resultContainer.innerHTML = `<div class="empty-state">✨ Cleared. Run a new conversion to generate images.</div>`;
                 statusMsgDiv.innerHTML = '';
@@ -456,7 +447,6 @@
                 progressArea.style.display = 'none';
             }
 
-            // Toggle custom range inputs
             function toggleRangeInputs() {
                 const mode = pageMode.value;
                 if (mode === 'range') {
@@ -466,7 +456,6 @@
                 }
             }
 
-            // Progress update
             function updateProgress(current, total, message) {
                 if (total > 0) {
                     const percent = (current / total) * 100;
@@ -484,7 +473,6 @@
                 }
             }
 
-            // Render a single page to dataURL
             async function renderPageToImage(pdfDocument, pageNum, scale, outputFormat) {
                 const page = await pdfDocument.getPage(pageNum);
                 const viewport = page.getViewport({ scale: scale });
@@ -511,7 +499,6 @@
                 return dataURL;
             }
 
-            // Generate and display images, store in allGeneratedImages
             async function generateAndDisplay(pdfDocument, pagesToConvert, scale, outputFormat) {
                 const total = pagesToConvert.length;
                 if (total === 0) {
@@ -520,7 +507,6 @@
                     return;
                 }
 
-                // Reset batch storage
                 allGeneratedImages = [];
                 resultContainer.innerHTML = '';
                 const gridDiv = document.createElement('div');
@@ -537,8 +523,6 @@
                         const extension = outputFormat === 'image/jpeg' ? 'jpg' : 'png';
                         const fileName = `pdf_page_${pageNum}.${extension}`;
                         const formatLabel = outputFormat === 'image/jpeg' ? 'JPEG' : 'PNG';
-
-                        // Store for batch download
                         allGeneratedImages.push({ filename: fileName, dataURL: dataURL });
 
                         const card = document.createElement('div');
@@ -593,7 +577,6 @@
                 }, 2000);
             }
 
-            // Single image download
             function downloadImage(dataURL, filename) {
                 const link = document.createElement('a');
                 link.href = dataURL;
@@ -603,7 +586,6 @@
                 document.body.removeChild(link);
             }
 
-            // Batch download: create ZIP from allGeneratedImages
             async function downloadAllAsZip() {
                 if (!allGeneratedImages.length) {
                     statusMsgDiv.innerHTML = '⚠️ No images to download. Please convert a PDF first.';
@@ -617,7 +599,6 @@
                 const zip = new JSZip();
                 const folder = zip.folder("pdf_images");
                 for (const img of allGeneratedImages) {
-                    // dataURL contains base64, extract base64 part
                     const base64Data = img.dataURL.split(',')[1];
                     if (base64Data) {
                         folder.file(img.filename, base64Data, { base64: true });
@@ -627,7 +608,6 @@
                 }
                 try {
                     const content = await zip.generateAsync({ type: "blob" });
-                    // Use FileSaver if available, else fallback to blob URL
                     if (typeof saveAs !== 'undefined') {
                         saveAs(content, "pdf_pages.zip");
                     } else {
@@ -646,8 +626,6 @@
                     statusMsgDiv.innerHTML = '❌ Failed to create ZIP: ' + err.message;
                 }
             }
-
-            // Main conversion flow
             async function startConversion() {
                 if (convertingLock) {
                     statusMsgDiv.innerHTML = '⏳ A conversion is already in progress. Please wait.';
@@ -735,7 +713,6 @@
                 }
             }
 
-            // Event listeners
             clearBtn.addEventListener('click', () => {
                 clearResults();
                 statusMsgDiv.innerHTML = '🗑️ Image preview cleared.';
@@ -781,8 +758,6 @@
                     startPageInput.value = end;
                 }
             });
-
-            // initial state
             updateBatchButtonState();
         });
     </script>
