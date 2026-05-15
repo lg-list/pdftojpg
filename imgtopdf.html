@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF Converter | Free Online Convert Images to PDF</title>
+    <meta name="description"
+        content="Free online Image to PDF converter. Merge JPG, PNG, WebP images into one PDF file instantly. No upload, all process run locally on browser.">
+    <meta name="keywords"
+        content="image to pdf, jpg to pdf, png to pdf, merge images to pdf, online pdf converter, free image converter">
+    <meta name="author" content="Image to PDF Tool">
+    <meta name="robots" content="index, follow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+  .shadow-soft { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+  .border-dashed-hover { transition: all 0.3s ease; }
+  .border-dashed-hover:hover { border-color: #2563eb; background: #f8faff; }
+}
+.thumb-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0; }
+</style>
+</head>
+
+<body class="bg-slate-50 font-sans text-dark">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-sm py-6">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h1 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-primary mb-2">Image to PDF Converter</h1>
+                <p class="text-slate-500 text-base">Free Online Tool to Merge JPG, PNG, WebP into Single PDF</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow max-w-3xl mx-auto px-4 py-10 w-full">
+            <div class="bg-white rounded-2xl shadow-soft p-6 sm:p-10">
+                <!-- Upload Area -->
+                <div id="uploadArea"
+                    class="border-2 border-dashed border-slate-300 rounded-xl p-12 text-center cursor-pointer border-dashed-hover mb-8">
+                    <input type="file" id="imgInput" accept="image/*" multiple class="hidden">
+                    <div class="text-slate-400 mb-3">
+                        <svg class="w-14 h-14 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                    </div>
+                    <p class="text-lg font-medium text-slate-700">Click or Drag Images Here</p>
+                    <p class="text-sm text-slate-400 mt-2">Support JPG, PNG, WebP | Multiple images allowed</p>
+                </div>
+
+                <!-- Preview Box -->
+                <div id="previewBox" class="flex flex-wrap gap-3 mb-8 hidden"></div>
+
+                <!-- Buttons -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <button id="makePdfBtn" disabled
+                        class="bg-primary text-white py-3 rounded-xl font-medium disabled:bg-slate-300 disabled:cursor-not-allowed hover:bg-primary/90 transition">
+                        Convert to PDF
+                    </button>
+                    <button id="resetBtn"
+                        class="border border-slate-300 py-3 rounded-xl font-medium hover:bg-slate-50 transition">
+                        Clear All
+                    </button>
+                </div>
+
+                <!-- Status Text -->
+                <p id="status" class="text-center text-sm text-slate-500 h-5"></p>
+            </div>
+
+            <!-- Ad Slot (Keep for Google Ads) -->
+            <div class="mt-8 bg-white rounded-2xl shadow-soft p-6 text-center text-slate-400 text-sm">
+                Advertisement
+            </div>
+
+            <!-- SEO Description Section -->
+            <div class="mt-8 bg-white rounded-2xl shadow-soft p-6 text-slate-600 text-sm leading-relaxed">
+                <h2 class="text-lg font-semibold text-dark mb-3">About Image to PDF Converter</h2>
+                <p class="mb-2">Our free online Image to PDF converter lets you easily combine multiple JPG, PNG and
+                    WebP images into one PDF file. All files are processed locally in your browser, no upload to server,
+                    safe and fast.</p>
+                <p>Perfect for converting photos, screenshots and documents to PDF for sharing and printing.</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-6 text-center text-slate-400 text-sm bg-white">
+            &copy; 2025 Image to PDF Converter | All rights reserved
+        </footer>
+    </div>
+
+    <script>
+const uploadArea = document.getElementById('uploadArea');
+            const imgInput = document.getElementById('imgInput');
+            const previewBox = document.getElementById('previewBox');
+            const makePdfBtn = document.getElementById('makePdfBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const status = document.getElementById('status');
+
+            let imgFiles =[];
+
+            uploadArea.onclick = () => imgInput.click();
+
+            // Select images
+            imgInput.onchange = e => {
+                const files = [...e.target.files].filter(f => f.type.startsWith('image/'));
+                if (!files.length) return;
+                addImages(files);
+            };
+
+            // Drag & Drop
+            uploadArea.ondragover = e => e.preventDefault();
+            uploadArea.ondrop = e => {
+                e.preventDefault();
+                const files = [...e.dataTransfer.files].filter(f => f.type.startsWith('image/'));
+                addImages(files);
+            };
+
+            function addImages(files){
+            imgFiles = [...imgFiles, ...files];
+            previewBox.classList.remove('hidden');
+            previewBox.innerHTML = '';
+
+            imgFiles.forEach((file) => {
+                const reader = new FileReader();
+                reader.onload = ev => {
+                    const img = document.createElement('img');
+                    img.src = ev.target.result;
+                    img.className = 'thumb-img';
+                    previewBox.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+
+            makePdfBtn.disabled = false;
+            status.textContent = `Selected ${imgFiles.length} image(s)`;
+        }
+
+        // Convert to PDF
+        makePdfBtn.onclick = async () => {
+            if (!imgFiles.length) return;
+            makePdfBtn.disabled = true;
+            status.textContent = 'Generating PDF...';
+
+            try {
+                const { PDFDocument } = PDFLib;
+                const pdfDoc = await PDFDocument.create();
+
+                for (const file of imgFiles) {
+                    const bytes = await file.arrayBuffer();
+                    let img;
+                    if (file.type.includes('png')) {
+                        img = await pdfDoc.embedPng(bytes);
+                    } else {
+                        img = await pdfDoc.embedJpg(bytes);
+                    }
+                    const page = pdfDoc.addPage([img.width, img.height]);
+                    page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+                }
+
+                const pdfBytes = await pdfDoc.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                saveAs(blob, 'converted-image.pdf');
+                status.textContent = 'Success! PDF downloaded';
+            } catch (err) {
+                console.error(err);
+                status.textContent = 'Conversion failed, please try again';
+            }
+            makePdfBtn.disabled = false;
+        };
+
+        // Clear all
+        resetBtn.onclick = () => {
+            imgFiles = [];
+            previewBox.innerHTML = '';
+            previewBox.classList.add('hidden');
+            imgInput.value = '';
+            makePdfBtn.disabled = true;
+            status.textContent = '';
+        };
+    </script>
+
+</body>
+
+</html>
