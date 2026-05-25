@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merge PDF Online Free | Combine Multiple PDF Files in Browser</title>
+  <meta name="description" content="Merge PDF files online for free. Combine multiple PDFs into one document locally in your browser with no upload, no watermark, and no account required.">
+  <meta name="keywords" content="merge pdf, combine pdf, pdf merger, merge pdf online, combine pdf files free">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="merge-pdf.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="tools.css">
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Merge PDF Online",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "A free browser-based tool to combine multiple PDF files into one PDF."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can I merge PDF files without uploading them?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This tool combines PDF files inside your browser, so the selected files stay on your device."}},
+      {"@type": "Question", "name": "Is this PDF merger free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can merge multiple PDF files for free without a watermark or sign up."}},
+      {"@type": "Question", "name": "Does the order of files matter?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The merged PDF follows the order shown in the file list, so select files in the order you want them combined."}}
+    ]
+  }
+  </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173901746543144"
+     crossorigin="anonymous"></script></head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+      <div class="nav-links"><a href="index.html">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html" aria-current="page">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="intro">
+        <span class="eyebrow">Free PDF merger</span>
+        <h1>Merge PDF files online</h1>
+        <p class="lead">Combine invoices, scans, reports, forms, and exported documents into one PDF. Everything runs locally in your browser, which keeps private files off remote servers.</p>
+        <div class="trust-row">
+          <span class="pill">No upload</span>
+          <span class="pill">No watermark</span>
+          <span class="pill">Works on phone and desktop</span>
+        </div>
+      </div>
+
+      <section class="tool-panel" aria-label="Merge PDF tool">
+        <label class="dropzone" for="pdfFiles" id="dropzone">
+          <input id="pdfFiles" type="file" accept="application/pdf" multiple>
+          <span><strong>Select PDF files</strong>or drop PDFs here to combine them</span>
+        </label>
+        <div class="controls">
+          <button id="mergeBtn" disabled>Merge PDF Files</button>
+          <button id="clearBtn" class="secondary" type="button">Clear Files</button>
+        </div>
+        <div class="file-list" id="fileList"></div>
+        <p class="status" id="status">Add two or more PDF files to start.</p>
+      </section>
+    </section>
+
+    <section class="content-section">
+      <h2>Combine documents in one file</h2>
+      <p>Use this tool when separate PDFs need to become one clean document, such as invoices, scans, contracts, receipts, reports, or application files. Select the PDFs in the order you want, then download one combined file.</p>
+    </section>
+
+    <section class="content-section two-cols">
+      <div>
+        <h2>How to merge PDFs</h2>
+        <ol>
+          <li>Select two or more PDF files.</li>
+          <li>Check the order in the file list.</li>
+          <li>Click Merge PDF Files to download one combined PDF.</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Related tools</h2>
+        <div class="tool-grid">
+          <a href="split-pdf.html"><strong>Split PDF</strong><span>Extract page ranges into a new document.</span></a>
+          <a href="rotate-pdf.html"><strong>Rotate PDF</strong><span>Fix sideways pages before sending files.</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-tools" aria-label="All tools">
+    <a href="index.html">PDF to Image</a>
+    <a href="imgtopdf.html">Image to PDF</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="split-pdf.html">Split PDF</a>
+    <a href="rotate-pdf.html">Rotate PDF</a>
+    <a href="remove-pdf-pages.html">Remove Pages</a>
+    <a href="add-page-numbers.html">Page Numbers</a>
+    <a href="watermark-pdf.html">Watermark PDF</a>
+    <a href="compress-image.html">Compress Image</a>
+    <a href="resize-image.html">Resize Image</a>
+    <a href="convert-image.html">Convert Image</a>
+  </div>
+  <div>All processing happens in your browser. Your files are not uploaded.</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("pdfFiles");
+      const dropzone = document.getElementById("dropzone");
+      const mergeBtn = document.getElementById("mergeBtn");
+      const clearBtn = document.getElementById("clearBtn");
+      const fileList = document.getElementById("fileList");
+      const status = document.getElementById("status");
+      let files = [];
+
+      function formatSize(bytes) {
+        return bytes > 1048576 ? `${(bytes / 1048576).toFixed(2)} MB` : `${(bytes / 1024).toFixed(1)} KB`;
+      }
+
+      function renderFiles() {
+        fileList.innerHTML = "";
+        files.forEach((file, index) => {
+          const item = document.createElement("div");
+          item.className = "file-item";
+          item.innerHTML = `<span>${index + 1}. ${file.name}</span><small>${formatSize(file.size)}</small>`;
+          fileList.appendChild(item);
+        });
+        mergeBtn.disabled = files.length < 2;
+        status.textContent = files.length ? `${files.length} PDF file(s) ready.` : "Add two or more PDF files to start.";
+      }
+
+      function addFiles(fileSet) {
+        const selected = Array.from(fileSet).filter(file => file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf"));
+        files = files.concat(selected);
+        renderFiles();
+      }
+
+      input.addEventListener("change", event => addFiles(event.target.files));
+      dropzone.addEventListener("dragover", event => {
+        event.preventDefault();
+      });
+      dropzone.addEventListener("drop", event => {
+        event.preventDefault();
+        addFiles(event.dataTransfer.files);
+      });
+
+      clearBtn.addEventListener("click", () => {
+        files = [];
+        input.value = "";
+        renderFiles();
+      });
+
+      mergeBtn.addEventListener("click", async () => {
+        if (files.length < 2 || !window.PDFLib) return;
+        mergeBtn.disabled = true;
+        status.textContent = "Merging PDFs...";
+        try {
+          const { PDFDocument } = PDFLib;
+          const mergedPdf = await PDFDocument.create();
+          for (const file of files) {
+            const bytes = await file.arrayBuffer();
+            const pdf = await PDFDocument.load(bytes, { ignoreEncryption: true });
+            const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+            pages.forEach(page => mergedPdf.addPage(page));
+          }
+          const mergedBytes = await mergedPdf.save({ useObjectStreams: true });
+          const blob = new Blob([mergedBytes], { type: "application/pdf" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "merged.pdf";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+          status.textContent = "Done. Your merged PDF has been downloaded.";
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Could not merge these PDFs. Try files without password protection.";
+        } finally {
+          renderFiles();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

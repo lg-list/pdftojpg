@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compress Image Online Free | Reduce JPG PNG WebP Size</title>
+  <meta name="description" content="Compress images online for free. Reduce JPG, PNG, and WebP file size in your browser before uploading, emailing, or converting images to PDF.">
+  <meta name="keywords" content="compress image, image compressor, reduce image size, compress jpg, compress png, compress webp">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="compress-image.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="tools.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compress Image Online",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "A free browser-based tool to reduce image file size."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can I compress images without uploading?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Images are resized and compressed locally in your browser."}},
+      {"@type": "Question", "name": "Which image formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "You can select JPG, PNG, WebP, and most browser-supported image formats. Output is saved as JPG or WebP."}},
+      {"@type": "Question", "name": "How do I make an image smaller for PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Compress images first, then use the Image to PDF tool to create a smaller PDF file."}}
+    ]
+  }
+  </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173901746543144"
+     crossorigin="anonymous"></script></head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+      <div class="nav-links"><a href="index.html">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html" aria-current="page">Compress Image</a></div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="intro">
+        <span class="eyebrow">Image size reducer</span>
+        <h1>Compress image online</h1>
+        <p class="lead">Reduce image file size before sending, uploading, or turning pictures into a PDF. Choose quality, max width, and output format to balance clarity and file size.</p>
+        <div class="trust-row">
+          <span class="pill">JPG and WebP output</span>
+          <span class="pill">Batch compression</span>
+          <span class="pill">Local browser tool</span>
+        </div>
+      </div>
+
+      <section class="tool-panel" aria-label="Compress image tool">
+        <label class="dropzone" for="imageFiles" id="dropzone">
+          <input id="imageFiles" type="file" accept="image/*" multiple>
+          <span><strong>Select images</strong>or drop JPG, PNG, or WebP files here</span>
+        </label>
+        <div class="controls">
+          <div class="field">
+            <label for="quality">Quality: <span id="qualityLabel">0.75</span></label>
+            <input id="quality" type="range" min="0.35" max="0.95" value="0.75" step="0.05">
+          </div>
+          <div class="field">
+            <label for="maxWidth">Max width</label>
+            <input id="maxWidth" type="number" min="320" max="6000" value="1600">
+            <span class="hint">Images smaller than this keep their original width.</span>
+          </div>
+          <div class="field">
+            <label for="format">Output format</label>
+            <select id="format">
+              <option value="image/jpeg">JPG</option>
+              <option value="image/webp">WebP</option>
+            </select>
+          </div>
+          <button id="compressBtn" disabled>Compress Images</button>
+          <button id="clearBtn" class="secondary" type="button">Clear Images</button>
+        </div>
+        <div class="preview-grid" id="previewGrid"></div>
+        <p class="status" id="status">Select one or more images to begin.</p>
+      </section>
+    </section>
+
+    <section class="content-section">
+      <h2>Make image files easier to share</h2>
+      <p>Large photos and screenshots can be difficult to upload, email, or turn into PDFs. Compress images first to reduce file size while keeping a useful level of quality.</p>
+    </section>
+
+    <section class="content-section two-cols">
+      <div>
+        <h2>How to reduce image size</h2>
+        <ol>
+          <li>Select one or more images.</li>
+          <li>Choose quality, max width, and JPG or WebP output.</li>
+          <li>Download the compressed image files.</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Related tools</h2>
+        <div class="tool-grid">
+          <a href="imgtopdf.html"><strong>Image to PDF</strong><span>Turn compressed images into a smaller PDF.</span></a>
+          <a href="index.html"><strong>PDF to Image</strong><span>Extract PDF pages before compressing images.</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-tools" aria-label="All tools">
+    <a href="index.html">PDF to Image</a>
+    <a href="imgtopdf.html">Image to PDF</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="split-pdf.html">Split PDF</a>
+    <a href="rotate-pdf.html">Rotate PDF</a>
+    <a href="remove-pdf-pages.html">Remove Pages</a>
+    <a href="add-page-numbers.html">Page Numbers</a>
+    <a href="watermark-pdf.html">Watermark PDF</a>
+    <a href="compress-image.html">Compress Image</a>
+    <a href="resize-image.html">Resize Image</a>
+    <a href="convert-image.html">Convert Image</a>
+  </div>
+  <div>All processing happens in your browser. Your files are not uploaded.</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("imageFiles");
+      const dropzone = document.getElementById("dropzone");
+      const quality = document.getElementById("quality");
+      const qualityLabel = document.getElementById("qualityLabel");
+      const maxWidth = document.getElementById("maxWidth");
+      const format = document.getElementById("format");
+      const compressBtn = document.getElementById("compressBtn");
+      const clearBtn = document.getElementById("clearBtn");
+      const previewGrid = document.getElementById("previewGrid");
+      const status = document.getElementById("status");
+      let files = [];
+
+      function formatBytes(bytes) {
+        return bytes > 1048576 ? `${(bytes / 1048576).toFixed(2)} MB` : `${(bytes / 1024).toFixed(1)} KB`;
+      }
+
+      function renderPreview() {
+        previewGrid.innerHTML = "";
+        files.forEach(file => {
+          const img = document.createElement("img");
+          img.alt = file.name;
+          img.src = URL.createObjectURL(file);
+          img.onload = () => URL.revokeObjectURL(img.src);
+          previewGrid.appendChild(img);
+        });
+        compressBtn.disabled = files.length === 0;
+        status.textContent = files.length ? `${files.length} image(s) ready.` : "Select one or more images to begin.";
+      }
+
+      function addFiles(fileSet) {
+        const selected = Array.from(fileSet).filter(file => file.type.startsWith("image/"));
+        files = files.concat(selected);
+        renderPreview();
+      }
+
+      function loadImage(file) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve(img);
+          img.onerror = reject;
+          img.src = URL.createObjectURL(file);
+        });
+      }
+
+      async function compressFile(file) {
+        const img = await loadImage(file);
+        const limit = Math.max(320, Number.parseInt(maxWidth.value, 10) || 1600);
+        const ratio = Math.min(1, limit / img.naturalWidth);
+        const width = Math.round(img.naturalWidth * ratio);
+        const height = Math.round(img.naturalHeight * ratio);
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d", { alpha: false });
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, width, height);
+        ctx.drawImage(img, 0, 0, width, height);
+        URL.revokeObjectURL(img.src);
+        const type = format.value;
+        const q = Number.parseFloat(quality.value);
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, type, q));
+        const extension = type === "image/webp" ? "webp" : "jpg";
+        const baseName = file.name.replace(/\.[^.]+$/, "");
+        return { blob, name: `${baseName}-compressed.${extension}`, originalSize: file.size };
+      }
+
+      function downloadBlob(blob, name) {
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = name;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      quality.addEventListener("input", () => {
+        qualityLabel.textContent = Number.parseFloat(quality.value).toFixed(2);
+      });
+      input.addEventListener("change", event => addFiles(event.target.files));
+      dropzone.addEventListener("dragover", event => event.preventDefault());
+      dropzone.addEventListener("drop", event => {
+        event.preventDefault();
+        addFiles(event.dataTransfer.files);
+      });
+      clearBtn.addEventListener("click", () => {
+        files = [];
+        input.value = "";
+        renderPreview();
+      });
+
+      compressBtn.addEventListener("click", async () => {
+        if (!files.length) return;
+        compressBtn.disabled = true;
+        status.textContent = "Compressing images...";
+        try {
+          let saved = 0;
+          for (const file of files) {
+            const result = await compressFile(file);
+            saved += Math.max(0, result.originalSize - result.blob.size);
+            downloadBlob(result.blob, result.name);
+          }
+          status.textContent = `Done. Estimated saved size: ${formatBytes(saved)}.`;
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Could not compress one of these images.";
+        } finally {
+          compressBtn.disabled = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

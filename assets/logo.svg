@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="PDF Tools logo">
+  <defs>
+    <linearGradient id="bg" x1="20" y1="16" x2="144" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2457d6"/>
+      <stop offset="1" stop-color="#0f8b8d"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="34" fill="url(#bg)"/>
+  <path d="M49 26h45l26 27v79a10 10 0 0 1-10 10H49a10 10 0 0 1-10-10V36a10 10 0 0 1 10-10Z" fill="#fff"/>
+  <path d="M94 27v26h25" fill="#dce9ff"/>
+  <rect x="52" y="69" width="56" height="44" rx="7" fill="#eaf2ff"/>
+  <circle cx="67" cy="84" r="7" fill="#2457d6"/>
+  <path d="m56 108 19-19 13 13 9-9 11 15H56Z" fill="#0f8b8d"/>
+  <path d="M55 126h50" stroke="#2457d6" stroke-width="8" stroke-linecap="round"/>
+</svg>

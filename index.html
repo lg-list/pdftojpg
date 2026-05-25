@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>100% Free PDF to Image Converter | Secure, No Server Storage, Private</title>
-    <meta name="description" content="100% Free PDF to Image Converter – Secure, no server storage. Convert PDF pages to PNG/JPEG instantly in your browser. Private, fast, no upload, no tracking.">
-    <meta name="keywords" content="free PDF to image, secure PDF converter, no server storage, PDF to PNG, PDF to JPEG, browser tool, free, private">
+    <title>PDF to Image Converter Free | Convert PDF to JPG or PNG Online</title>
+    <meta name="description" content="Convert PDF to JPG or PNG online for free. Turn every PDF page into high quality images locally in your browser with no upload and no watermark.">
+    <meta name="keywords" content="pdf to image, pdf to jpg, pdf to png, convert pdf pages to image, free pdf converter">
     <meta name="author" content="PDF Tools">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="PDF to Image Converter – Convert PDF pages to PNG/JPEG">
+    <meta property="og:title" content="PDF to Image Converter - Convert PDF pages to PNG/JPEG">
     <meta property="og:description"
         content="Fast, private, client-side PDF to image conversion. Extract pages as high-quality images without uploading.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://via.placeholder.com/1200x630?text=PDF+to+Image+Converter">
-    <link rel="canonical" href="https://www.yourtoolsite.com/pdf-to-image">
+    <link rel="canonical" href="index.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tools.css">
     <script src="js/pdf.min.js" defer></script>
     <script src="js/jszip.min.js" defer></script>
     <script src="js/FileSaver.min.js" defer></script>
@@ -29,13 +32,13 @@
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: #f0f2f5;
             margin: 0;
-            padding: 28px 20px;
+            padding: 0;
             color: #1e293b;
         }
 
         .container {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 28px auto;
             background: white;
             border-radius: 32px;
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
@@ -335,11 +338,17 @@
 </head>
 
 <body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+            <div class="nav-links"><a href="index.html" aria-current="page">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
+        </nav>
+    </header>
     <div class="container">
         <header>
-            <h1>📄 100% Free PDF to Image Converter</h1>
+            <h1>100% Free PDF to Image Converter</h1>
         <div class="sub">
-            🔒 100% Free • Secure & Private • <strong>No Server Storage</strong><br>
+            100% Free - Secure & Private - <strong>No Server Storage</strong><br>
             Convert PDF pages to PNG / JPEG images directly in your browser. Zero upload, zero tracking, nothing saved on any server.
             <span class="highlight">Totally Local & Safe</span>
         </header>
@@ -347,25 +356,25 @@
         <div class="file-area">
             <input type="file" id="pdfInput" accept="application/pdf"
                 style="flex:1; border:1px solid #cbd5e1; background: white;" aria-label="Choose PDF file">
-            <div id="fileStatus" class="file-info">⚡ No file selected</div>
+            <div id="fileStatus" class="file-info">No file selected</div>
         </div>
 
         <div class="toolbar">
             <div class="input-group">
-                <label>📐 Image Scale</label>
+                <label>Image Scale</label>
                 <input type="number" id="scaleInput" step="0.1" value="2.0" min="0.8" max="4.0"
                     aria-label="Scale factor">
                 <span class="badge">Higher = better quality & larger file</span>
             </div>
             <div class="input-group">
-                <label>🎨 Output Format</label>
+                <label>Output Format</label>
                 <select id="formatSelect" aria-label="Output image format">
                     <option value="image/png">PNG (lossless)</option>
                     <option value="image/jpeg">JPEG (compressed)</option>
                 </select>
             </div>
             <div class="input-group">
-                <label>📑 Page Range</label>
+                <label>Page Range</label>
                 <div class="range-inputs">
                     <label style="font-weight:normal;">Mode</label>
                     <select id="pageMode" aria-label="Page range mode">
@@ -375,16 +384,16 @@
                     <div id="rangeControls" style="display: flex; gap: 8px;">
                         <input type="number" id="startPage" placeholder="Start" value="1" min="1" style="width: 80px;"
                             aria-label="Start page">
-                        <span>—</span>
+                        <span>-</span>
                         <input type="number" id="endPage" placeholder="End" value="1" min="1" style="width: 80px;"
                             aria-label="End page">
                     </div>
                 </div>
             </div>
             <div class="input-group action-buttons">
-                <button id="convertBtn">✨ Convert to Images</button>
-                <button id="clearBtn" class="btn-secondary" type="button">🗑 Clear results</button>
-                <button id="downloadAllBtn" class="btn-success" type="button" disabled>📦 Download All as ZIP</button>
+                <button id="convertBtn">Convert to Images</button>
+                <button id="clearBtn" class="btn-secondary" type="button">Clear Results</button>
+                <button id="downloadAllBtn" class="btn-success" type="button" disabled>Download All as ZIP</button>
             </div>
         </div>
 
@@ -395,15 +404,44 @@
 
         <main id="resultContainer">
             <div class="empty-state">
-                📁 Select a PDF file, adjust settings, and click <strong>“Convert to Images”</strong>.<br>
+                Select a PDF file, adjust settings, and click <strong>Convert to Images</strong>.<br>
                 Each page will be rendered as an image. Download individually or all at once.
             </div>
         </main>
+        <section class="content-section">
+            <h2>More free PDF and image tools</h2>
+            <p>Use these related tools to complete common document tasks directly in your browser. Convert, merge, split, rotate, resize, and prepare files without uploading them to a server.</p>
+            <div class="tool-grid">
+                <a href="imgtopdf.html"><strong>Image to PDF</strong><span>Combine JPG, PNG, and WebP images into one PDF.</span></a>
+                <a href="merge-pdf.html"><strong>Merge PDF</strong><span>Combine multiple PDF files into a single document.</span></a>
+                <a href="split-pdf.html"><strong>Split PDF</strong><span>Extract selected pages or ranges from a PDF.</span></a>
+                <a href="rotate-pdf.html"><strong>Rotate PDF</strong><span>Fix sideways or upside down scanned PDF pages.</span></a>
+                <a href="compress-image.html"><strong>Compress Image</strong><span>Reduce image size before sending or converting to PDF.</span></a>
+                <a href="remove-pdf-pages.html"><strong>Remove PDF Pages</strong><span>Delete blank, duplicate, or unwanted PDF pages.</span></a>
+                <a href="add-page-numbers.html"><strong>Add Page Numbers</strong><span>Number PDF pages before printing or sharing.</span></a>
+                <a href="watermark-pdf.html"><strong>Watermark PDF</strong><span>Add draft, copy, or confidential text to PDF files.</span></a>
+                <a href="resize-image.html"><strong>Resize Image</strong><span>Change image width and height in exact pixels.</span></a>
+                <a href="convert-image.html"><strong>Convert Image</strong><span>Convert JPG, PNG, and WebP image formats.</span></a>
+            </div>
+        </section>
         <footer>
-            ⚡ Powered by PDF.js + JSZip – All conversion happens in your browser. No file upload, no data leaves your
+            <div class="footer-tools" aria-label="All tools">
+                <a href="index.html">PDF to Image</a>
+                <a href="imgtopdf.html">Image to PDF</a>
+                <a href="merge-pdf.html">Merge PDF</a>
+                <a href="split-pdf.html">Split PDF</a>
+                <a href="rotate-pdf.html">Rotate PDF</a>
+                <a href="remove-pdf-pages.html">Remove Pages</a>
+                <a href="add-page-numbers.html">Page Numbers</a>
+                <a href="watermark-pdf.html">Watermark PDF</a>
+                <a href="compress-image.html">Compress Image</a>
+                <a href="resize-image.html">Resize Image</a>
+                <a href="convert-image.html">Convert Image</a>
+            </div>
+            Powered by PDF.js + JSZip - All conversion happens in your browser. No file upload, no data leaves your
             device. 
             <br>
-            🚀 fast loading with preconnect and deferred scripts.
+            Fast loading with deferred scripts.
         </footer>
     </div>
 
@@ -443,7 +481,7 @@
             }
 
             function clearResults() {
-                resultContainer.innerHTML = `<div class="empty-state">✨ Cleared. Run a new conversion to generate images.</div>`;
+                resultContainer.innerHTML = `<div class="empty-state">Cleared. Run a new conversion to generate images.</div>`;
                 statusMsgDiv.innerHTML = '';
                 clearAllImages();
                 progressArea.style.display = 'none';
@@ -504,7 +542,7 @@
             async function generateAndDisplay(pdfDocument, pagesToConvert, scale, outputFormat) {
                 const total = pagesToConvert.length;
                 if (total === 0) {
-                    statusMsgDiv.innerHTML = '⚠️ No pages to convert. Check your page range.';
+                    statusMsgDiv.innerHTML = 'No pages to convert. Check your page range.';
                     progressArea.style.display = 'none';
                     return;
                 }
@@ -519,7 +557,7 @@
                 for (let idx = 0; idx < total; idx++) {
                     const pageNum = pagesToConvert[idx];
                     try {
-                        updateProgress(completed, total, `🖼️ Rendering page ${pageNum} of ${total}... (${total} total pages)`);
+                        updateProgress(completed, total, `Rendering page ${pageNum} of ${total}... (${total} total pages)`);
                         const dataURL = await renderPageToImage(pdfDocument, pageNum, scale, outputFormat);
 
                         const extension = outputFormat === 'image/jpeg' ? 'jpg' : 'png';
@@ -531,14 +569,14 @@
                         card.className = 'image-card';
                         card.innerHTML = `
                         <div class="card-header">
-                            <span class="page-num">📄 Page ${pageNum}</span>
+                            <span class="page-num">Page ${pageNum}</span>
                             <span style="font-size:0.7rem; background:#eef2ff; padding:2px 8px; border-radius:20px;">${formatLabel}</span>
                         </div>
                         <div class="img-preview">
                             <img src="${dataURL}" alt="Page ${pageNum} preview" loading="lazy" width="auto" height="auto">
                         </div>
                         <div class="card-actions">
-                            <button class="download-btn" data-url="${dataURL}" data-filename="${fileName}">⬇️ Download Image</button>
+                            <button class="download-btn" data-url="${dataURL}" data-filename="${fileName}">Download Image</button>
                         </div>
                     `;
                         gridDiv.appendChild(card);
@@ -551,7 +589,7 @@
                         });
 
                         completed++;
-                        updateProgress(completed, total, `✅ Completed ${completed}/${total} pages. Processing next...`);
+                        updateProgress(completed, total, `Completed ${completed}/${total} pages. Processing next...`);
                     } catch (err) {
                         console.error(err);
                         const errorCard = document.createElement('div');
@@ -559,20 +597,20 @@
                         errorCard.style.border = '1px solid #ffcdd2';
                         errorCard.innerHTML = `
                         <div class="card-header" style="background:#fff5f5;">
-                            <span class="page-num">⚠️ Page ${pageNum}</span>
+                            <span class="page-num">Page ${pageNum}</span>
                             <span style="color:#b91c1c;">Render failed</span>
                         </div>
                         <div class="img-preview" style="background:#ffeaea; padding:20px;">
-                            ❌ Error: ${err.message.replace(/[<>]/g, '')}
+                            鉂?Error: ${err.message.replace(/[<>]/g, '')}
                         </div>
                     `;
                         gridDiv.appendChild(errorCard);
                         completed++;
-                        updateProgress(completed, total, `⚠️ Failed on page ${pageNum}, continuing...`);
+                        updateProgress(completed, total, `Failed on page ${pageNum}, continuing...`);
                     }
                 }
 
-                updateProgress(total, total, `🎉 Conversion finished! ${total} image(s) generated. Use "Download All as ZIP" to save all at once.`);
+                updateProgress(total, total, `Conversion finished. ${total} image(s) generated. Use "Download All as ZIP" to save all at once.`);
                 updateBatchButtonState();
                 setTimeout(() => {
                     if (!convertingLock) progressArea.style.display = 'none';
@@ -590,14 +628,14 @@
 
             async function downloadAllAsZip() {
                 if (!allGeneratedImages.length) {
-                    statusMsgDiv.innerHTML = '⚠️ No images to download. Please convert a PDF first.';
+                    statusMsgDiv.innerHTML = 'No images to download. Please convert a PDF first.';
                     return;
                 }
                 if (typeof JSZip === 'undefined') {
-                    statusMsgDiv.innerHTML = '❌ ZIP library not loaded. Please refresh and try again.';
+                    statusMsgDiv.innerHTML = '鉂?ZIP library not loaded. Please refresh and try again.';
                     return;
                 }
-                statusMsgDiv.innerHTML = '📦 Creating ZIP archive, please wait...';
+                statusMsgDiv.innerHTML = 'Creating ZIP archive, please wait...';
                 const zip = new JSZip();
                 const folder = zip.folder("pdf_images");
                 for (const img of allGeneratedImages) {
@@ -622,19 +660,19 @@
                         document.body.removeChild(a);
                         URL.revokeObjectURL(url);
                     }
-                    statusMsgDiv.innerHTML = '✅ ZIP archive saved successfully.';
+                    statusMsgDiv.innerHTML = 'ZIP archive saved successfully.';
                 } catch (err) {
                     console.error(err);
-                    statusMsgDiv.innerHTML = '❌ Failed to create ZIP: ' + err.message;
+                    statusMsgDiv.innerHTML = '鉂?Failed to create ZIP: ' + err.message;
                 }
             }
             async function startConversion() {
                 if (convertingLock) {
-                    statusMsgDiv.innerHTML = '⏳ A conversion is already in progress. Please wait.';
+                    statusMsgDiv.innerHTML = '鈴?A conversion is already in progress. Please wait.';
                     return;
                 }
                 if (!currentPdfFile) {
-                    statusMsgDiv.innerHTML = '❌ Please select a PDF file first.';
+                    statusMsgDiv.innerHTML = '鉂?Please select a PDF file first.';
                     return;
                 }
 
@@ -647,17 +685,17 @@
                 let pdfDocument = pdfDocCache;
                 if (!pdfDocument) {
                     try {
-                        statusMsgDiv.innerHTML = '📂 Loading PDF file...';
+                        statusMsgDiv.innerHTML = 'Loading PDF file...';
                         progressArea.style.display = 'block';
                         progressBar.style.width = '10%';
                         const arrayBuffer = await currentPdfFile.arrayBuffer();
                         const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer, useSystemFonts: true });
                         pdfDocument = await loadingTask.promise;
                         pdfDocCache = pdfDocument;
-                        statusMsgDiv.innerHTML = `✅ PDF loaded successfully. Total pages: ${pdfDocument.numPages}. Ready.`;
+                        statusMsgDiv.innerHTML = `PDF loaded successfully. Total pages: ${pdfDocument.numPages}. Ready.`;
                     } catch (err) {
                         console.error(err);
-                        statusMsgDiv.innerHTML = `❌ Failed to parse PDF: ${err.message}`;
+                        statusMsgDiv.innerHTML = `鉂?Failed to parse PDF: ${err.message}`;
                         progressArea.style.display = 'none';
                         return;
                     }
@@ -676,21 +714,21 @@
                     end = Math.max(start, Math.min(end, totalPages));
                     for (let i = start; i <= end; i++) pagesToConvert.push(i);
                     if (pagesToConvert.length === 0) {
-                        statusMsgDiv.innerHTML = `⚠️ Invalid range. Start page ${start} > end page or out of bounds (total pages: ${totalPages})`;
+                        statusMsgDiv.innerHTML = `Invalid range. Start page ${start} > end page or out of bounds (total pages: ${totalPages})`;
                         progressArea.style.display = 'none';
                         return;
                     }
                 }
 
                 if (pagesToConvert.length === 0) {
-                    statusMsgDiv.innerHTML = `⚠️ No valid pages to convert. PDF has ${totalPages} page(s).`;
+                    statusMsgDiv.innerHTML = `No valid pages to convert. PDF has ${totalPages} page(s).`;
                     progressArea.style.display = 'none';
                     return;
                 }
 
                 convertingLock = true;
                 convertBtn.disabled = true;
-                convertBtn.textContent = '⏳ Converting...';
+                convertBtn.textContent = '鈴?Converting...';
                 downloadAllBtn.disabled = true; // disable during conversion
                 progressBar.style.width = '0%';
                 progressArea.style.display = 'block';
@@ -699,13 +737,13 @@
                     await generateAndDisplay(pdfDocument, pagesToConvert, scale, outputFormat);
                 } catch (err) {
                     console.error(err);
-                    statusMsgDiv.innerHTML = `🔥 Conversion error: ${err.message}`;
-                    resultContainer.innerHTML = `<div class="empty-state">⚠️ Conversion failed: ${err.message}<br>Try a lower scale or different PDF.</div>`;
+                    statusMsgDiv.innerHTML = `Conversion error: ${err.message}`;
+                    resultContainer.innerHTML = `<div class="empty-state">Conversion failed: ${err.message}<br>Try a lower scale or different PDF.</div>`;
                     clearAllImages();
                 } finally {
                     convertingLock = false;
                     convertBtn.disabled = false;
-                    convertBtn.textContent = '✨ Convert to Images';
+                    convertBtn.textContent = 'Convert to Images';
                     updateBatchButtonState();
                     setTimeout(() => {
                         if (!convertingLock && progressArea.style.display !== 'none' && statusMsgDiv.innerHTML.includes('finished')) {
@@ -717,7 +755,7 @@
 
             clearBtn.addEventListener('click', () => {
                 clearResults();
-                statusMsgDiv.innerHTML = '🗑️ Image preview cleared.';
+                statusMsgDiv.innerHTML = 'Image preview cleared.';
             });
 
             convertBtn.addEventListener('click', startConversion);
@@ -727,16 +765,16 @@
                 const file = e.target.files[0];
                 if (file && file.type === 'application/pdf') {
                     currentPdfFile = file;
-                    fileStatus.innerHTML = `✅ Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+                    fileStatus.innerHTML = `Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
                     pdfDocCache = null;
                     clearResults();
-                    statusMsgDiv.innerHTML = `📄 Ready: ${file.name}. Click "Convert to Images" to start.`;
+                    statusMsgDiv.innerHTML = `Ready: ${file.name}. Click "Convert to Images" to start.`;
                 } else if (file) {
-                    fileStatus.innerHTML = `❌ Invalid file. Please choose a PDF.`;
+                    fileStatus.innerHTML = `鉂?Invalid file. Please choose a PDF.`;
                     currentPdfFile = null;
                     clearResults();
                 } else {
-                    fileStatus.innerHTML = `⚡ No file selected`;
+                    fileStatus.innerHTML = `No file selected`;
                     currentPdfFile = null;
                     clearResults();
                 }
@@ -766,3 +804,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,6 +11,21 @@
         content="image to pdf, jpg to pdf, png to pdf, merge images to pdf, online pdf converter, free image converter">
     <meta name="author" content="Image to PDF Tool">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="imgtopdf.html">
+    <link rel="stylesheet" href="tools.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image to PDF Converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "description": "A free browser-based tool to combine images into one PDF."
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
@@ -27,6 +42,7 @@
                     },
                 }
             }
+        };
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
@@ -36,11 +52,18 @@
 }
 .thumb-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0; }
 </style>
-</head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173901746543144"
+     crossorigin="anonymous"></script></head>
 
 <body class="bg-slate-50 font-sans text-dark">
 
     <div class="min-h-screen flex flex-col">
+        <header class="site-header">
+            <nav class="nav" aria-label="Main navigation">
+                <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+                <div class="nav-links"><a href="index.html">PDF to Image</a><a href="imgtopdf.html" aria-current="page">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
+            </nav>
+        </header>
         <!-- Header -->
         <header class="bg-white shadow-sm py-6">
             <div class="max-w-3xl mx-auto px-4 text-center">
@@ -90,7 +113,7 @@
                 Advertisement
             </div>
 
-            <!-- SEO Description Section -->
+            <!-- Description Section -->
             <div class="mt-8 bg-white rounded-2xl shadow-soft p-6 text-slate-600 text-sm leading-relaxed">
                 <h2 class="text-lg font-semibold text-dark mb-3">About Image to PDF Converter</h2>
                 <p class="mb-2">Our free online Image to PDF converter lets you easily combine multiple JPG, PNG and
@@ -98,10 +121,39 @@
                     safe and fast.</p>
                 <p>Perfect for converting photos, screenshots and documents to PDF for sharing and printing.</p>
             </div>
+
+            <div class="mt-8 bg-white rounded-2xl shadow-soft p-6 text-slate-600 text-sm leading-relaxed">
+                <h2 class="text-lg font-semibold text-dark mb-4">More free PDF and image tools</h2>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="index.html"><strong class="block text-primary">PDF to Image</strong><span>Convert PDF pages to JPG or PNG.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="merge-pdf.html"><strong class="block text-primary">Merge PDF</strong><span>Combine multiple PDF files.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="split-pdf.html"><strong class="block text-primary">Split PDF</strong><span>Extract selected PDF pages.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="rotate-pdf.html"><strong class="block text-primary">Rotate PDF</strong><span>Fix sideways PDF pages.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="compress-image.html"><strong class="block text-primary">Compress Image</strong><span>Reduce image size before making a PDF.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="remove-pdf-pages.html"><strong class="block text-primary">Remove PDF Pages</strong><span>Delete unwanted PDF pages.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="add-page-numbers.html"><strong class="block text-primary">Add Page Numbers</strong><span>Number PDF pages.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="watermark-pdf.html"><strong class="block text-primary">Watermark PDF</strong><span>Add draft or confidential text.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="resize-image.html"><strong class="block text-primary">Resize Image</strong><span>Change image dimensions in pixels.</span></a>
+                    <a class="border border-slate-200 rounded-lg p-4 hover:bg-blue-50" href="convert-image.html"><strong class="block text-primary">Convert Image</strong><span>Convert JPG, PNG, and WebP.</span></a>
+                </div>
+            </div>
         </main>
 
         <!-- Footer -->
         <footer class="py-6 text-center text-slate-400 text-sm bg-white">
+            <div class="footer-tools" aria-label="All tools">
+                <a class="hover:text-primary" href="index.html">PDF to Image</a>
+                <a class="hover:text-primary" href="imgtopdf.html">Image to PDF</a>
+                <a class="hover:text-primary" href="merge-pdf.html">Merge PDF</a>
+                <a class="hover:text-primary" href="split-pdf.html">Split PDF</a>
+                <a class="hover:text-primary" href="rotate-pdf.html">Rotate PDF</a>
+                <a class="hover:text-primary" href="remove-pdf-pages.html">Remove Pages</a>
+                <a class="hover:text-primary" href="add-page-numbers.html">Page Numbers</a>
+                <a class="hover:text-primary" href="watermark-pdf.html">Watermark PDF</a>
+                <a class="hover:text-primary" href="compress-image.html">Compress Image</a>
+                <a class="hover:text-primary" href="resize-image.html">Resize Image</a>
+                <a class="hover:text-primary" href="convert-image.html">Convert Image</a>
+            </div>
             &copy; 2025 Image to PDF Converter | All rights reserved
         </footer>
     </div>
@@ -153,6 +205,31 @@ const uploadArea = document.getElementById('uploadArea');
             status.textContent = `Selected ${imgFiles.length} image(s)`;
         }
 
+        function imageFileToJpegBytes(file) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    const ctx = canvas.getContext('2d', { alpha: false });
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0);
+                    URL.revokeObjectURL(img.src);
+                    canvas.toBlob(async blob => {
+                        if (!blob) {
+                            reject(new Error('Could not convert image'));
+                            return;
+                        }
+                        resolve(await blob.arrayBuffer());
+                    }, 'image/jpeg', 0.92);
+                };
+                img.onerror = () => reject(new Error('Could not read image'));
+                img.src = URL.createObjectURL(file);
+            });
+        }
+
         // Convert to PDF
         makePdfBtn.onclick = async () => {
             if (!imgFiles.length) return;
@@ -168,8 +245,11 @@ const uploadArea = document.getElementById('uploadArea');
                     let img;
                     if (file.type.includes('png')) {
                         img = await pdfDoc.embedPng(bytes);
-                    } else {
+                    } else if (file.type.includes('jpeg') || file.type.includes('jpg')) {
                         img = await pdfDoc.embedJpg(bytes);
+                    } else {
+                        const jpegBytes = await imageFileToJpegBytes(file);
+                        img = await pdfDoc.embedJpg(jpegBytes);
                     }
                     const page = pdfDoc.addPage([img.width, img.height]);
                     page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
@@ -200,3 +280,10 @@ const uploadArea = document.getElementById('uploadArea');
 </body>
 
 </html>
+
+
+
+
+
+
+

@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotate PDF Online Free | Fix Sideways PDF Pages</title>
+  <meta name="description" content="Rotate PDF pages online for free. Turn all pages or selected pages 90, 180, or 270 degrees in your browser with no upload.">
+  <meta name="keywords" content="rotate pdf, rotate pdf pages, fix sideways pdf, turn pdf page, rotate pdf online free">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="rotate-pdf.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="tools.css">
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Rotate PDF Online",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "A free browser-based tool to rotate PDF pages."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can I rotate only some PDF pages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter page numbers or ranges such as 1,3,5-7 to rotate only selected pages."}},
+      {"@type": "Question", "name": "Does rotating a PDF upload my file?", "acceptedAnswer": {"@type": "Answer", "text": "No. Rotation is done locally inside your browser."}},
+      {"@type": "Question", "name": "Can I fix upside down PDF pages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Choose 180 degrees to turn upside down pages back into the correct orientation."}}
+    ]
+  }
+  </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173901746543144"
+     crossorigin="anonymous"></script></head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+      <div class="nav-links"><a href="index.html">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="intro">
+        <span class="eyebrow">PDF orientation fixer</span>
+        <h1>Rotate PDF pages online</h1>
+        <p class="lead">Fix scanned pages that are sideways or upside down. Rotate every page or only selected pages, then download a corrected PDF immediately.</p>
+        <div class="trust-row">
+          <span class="pill">90 / 180 / 270 degrees</span>
+          <span class="pill">Selected pages</span>
+          <span class="pill">No file upload</span>
+        </div>
+      </div>
+
+      <section class="tool-panel" aria-label="Rotate PDF tool">
+        <label class="dropzone" for="pdfFile" id="dropzone">
+          <input id="pdfFile" type="file" accept="application/pdf">
+          <span><strong>Select a PDF file</strong>or drop one PDF here</span>
+        </label>
+        <div class="controls">
+          <div class="field">
+            <label for="degrees">Rotation</label>
+            <select id="degrees">
+              <option value="90">90 degrees clockwise</option>
+              <option value="180">180 degrees</option>
+              <option value="270">270 degrees clockwise</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pageRanges">Pages to rotate</label>
+            <input id="pageRanges" type="text" placeholder="All pages or 1,3,5-7" disabled>
+            <span class="hint" id="pageHint">Choose a PDF to see the total page count.</span>
+          </div>
+          <button id="rotateBtn" disabled>Rotate PDF</button>
+          <button id="clearBtn" class="secondary" type="button">Clear File</button>
+        </div>
+        <p class="status" id="status">Select a PDF file to begin.</p>
+      </section>
+    </section>
+
+    <section class="content-section">
+      <h2>Fix scanned PDF orientation</h2>
+      <p>Scanned PDFs often contain pages that are sideways or upside down. This tool lets you rotate all pages or only selected pages, then save a corrected copy for reading, printing, or sharing.</p>
+    </section>
+
+    <section class="content-section two-cols">
+      <div>
+        <h2>Best uses</h2>
+        <ul>
+          <li>Fix sideways scans from office copiers.</li>
+          <li>Turn upside down forms before printing.</li>
+          <li>Rotate only a few pages in a mixed-orientation PDF.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Related tools</h2>
+        <div class="tool-grid">
+          <a href="split-pdf.html"><strong>Split PDF</strong><span>Extract corrected pages into a smaller file.</span></a>
+          <a href="merge-pdf.html"><strong>Merge PDF</strong><span>Combine corrected PDFs into one document.</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-tools" aria-label="All tools">
+    <a href="index.html">PDF to Image</a>
+    <a href="imgtopdf.html">Image to PDF</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="split-pdf.html">Split PDF</a>
+    <a href="rotate-pdf.html">Rotate PDF</a>
+    <a href="remove-pdf-pages.html">Remove Pages</a>
+    <a href="add-page-numbers.html">Page Numbers</a>
+    <a href="watermark-pdf.html">Watermark PDF</a>
+    <a href="compress-image.html">Compress Image</a>
+    <a href="resize-image.html">Resize Image</a>
+    <a href="convert-image.html">Convert Image</a>
+  </div>
+  <div>All processing happens in your browser. Your files are not uploaded.</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("pdfFile");
+      const dropzone = document.getElementById("dropzone");
+      const degreesSelect = document.getElementById("degrees");
+      const rangesInput = document.getElementById("pageRanges");
+      const pageHint = document.getElementById("pageHint");
+      const rotateBtn = document.getElementById("rotateBtn");
+      const clearBtn = document.getElementById("clearBtn");
+      const status = document.getElementById("status");
+      let file = null;
+      let pdfDoc = null;
+      let pageCount = 0;
+
+      function parseRanges(value, total) {
+        if (!value.trim() || value.trim().toLowerCase() === "all") {
+          return Array.from({ length: total }, (_, index) => index);
+        }
+        const pages = new Set();
+        const chunks = value.split(",").map(part => part.trim()).filter(Boolean);
+        for (const chunk of chunks) {
+          if (chunk.includes("-")) {
+            const [startRaw, endRaw] = chunk.split("-");
+            const start = Number.parseInt(startRaw, 10);
+            const end = Number.parseInt(endRaw, 10);
+            if (!Number.isInteger(start) || !Number.isInteger(end) || start < 1 || end < start || end > total) {
+              throw new Error(`Invalid range: ${chunk}`);
+            }
+            for (let page = start; page <= end; page += 1) pages.add(page - 1);
+          } else {
+            const page = Number.parseInt(chunk, 10);
+            if (!Number.isInteger(page) || page < 1 || page > total) {
+              throw new Error(`Invalid page: ${chunk}`);
+            }
+            pages.add(page - 1);
+          }
+        }
+        return Array.from(pages);
+      }
+
+      async function loadPdf(selectedFile) {
+        if (!window.PDFLib) return;
+        file = selectedFile;
+        status.textContent = "Reading PDF...";
+        const bytes = await file.arrayBuffer();
+        pdfDoc = await PDFLib.PDFDocument.load(bytes, { ignoreEncryption: true });
+        pageCount = pdfDoc.getPageCount();
+        rangesInput.disabled = false;
+        rangesInput.value = "all";
+        pageHint.textContent = `This PDF has ${pageCount} page(s). Type all or page ranges like 2,4,6-8.`;
+        rotateBtn.disabled = false;
+        status.textContent = `${file.name} is ready.`;
+      }
+
+      input.addEventListener("change", event => {
+        const selected = event.target.files[0];
+        if (selected) loadPdf(selected).catch(error => {
+          console.error(error);
+          status.textContent = "Could not read this PDF. Password-protected files may fail.";
+        });
+      });
+
+      dropzone.addEventListener("dragover", event => event.preventDefault());
+      dropzone.addEventListener("drop", event => {
+        event.preventDefault();
+        const selected = Array.from(event.dataTransfer.files).find(candidate => candidate.type === "application/pdf" || candidate.name.toLowerCase().endsWith(".pdf"));
+        if (selected) loadPdf(selected).catch(error => {
+          console.error(error);
+          status.textContent = "Could not read this PDF. Password-protected files may fail.";
+        });
+      });
+
+      clearBtn.addEventListener("click", () => {
+        file = null;
+        pdfDoc = null;
+        pageCount = 0;
+        input.value = "";
+        rangesInput.value = "";
+        rangesInput.disabled = true;
+        rotateBtn.disabled = true;
+        pageHint.textContent = "Choose a PDF to see the total page count.";
+        status.textContent = "Select a PDF file to begin.";
+      });
+
+      rotateBtn.addEventListener("click", async () => {
+        if (!pdfDoc) return;
+        rotateBtn.disabled = true;
+        status.textContent = "Rotating PDF pages...";
+        try {
+          const degree = Number.parseInt(degreesSelect.value, 10);
+          const selectedPages = parseRanges(rangesInput.value, pageCount);
+          const pages = pdfDoc.getPages();
+          selectedPages.forEach(index => {
+            const current = pages[index].getRotation().angle;
+            pages[index].setRotation(PDFLib.degrees((current + degree) % 360));
+          });
+          const bytes = await pdfDoc.save({ useObjectStreams: true });
+          const blob = new Blob([bytes], { type: "application/pdf" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "rotated.pdf";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+          status.textContent = "Done. Your rotated PDF has been downloaded.";
+        } catch (error) {
+          console.error(error);
+          status.textContent = error.message || "Could not rotate this PDF.";
+        } finally {
+          rotateBtn.disabled = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
