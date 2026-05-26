@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator Free | Create QR Code Online</title>
+  <meta name="description" content="Create a QR code online for free. Generate QR codes for links, text, email, phone numbers, and Wi-Fi details in your browser, then download as PNG.">
+  <meta name="keywords" content="qr code generator, free qr code, create qr code, qr code png, link to qr code">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="qr-code-generator.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="tools.css">
+  <script src="js/qrcode.min.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173901746543144"
+     crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"QR Code Generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate QR codes online and download them as PNG images."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can I create a QR code for free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter text or a link, generate the QR code, and download it as a PNG image."}},
+    {"@type":"Question","name":"What can I put in a QR code?","acceptedAnswer":{"@type":"Answer","text":"You can create QR codes for URLs, plain text, email addresses, phone numbers, Wi-Fi details, and other short text."}},
+    {"@type":"Question","name":"Can I download the QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes. The generated QR code can be downloaded as a PNG file."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+      <div class="nav-links"><a href="index.html">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="intro">
+        <span class="eyebrow">Free QR tool</span>
+        <h1>QR Code Generator</h1>
+        <p class="lead">Create a scannable QR code for a link, text, contact detail, phone number, or Wi-Fi note. Customize the size and colors, then download the QR code as a PNG image.</p>
+        <div class="trust-row">
+          <span class="pill">Download PNG</span>
+          <span class="pill">Custom colors</span>
+          <span class="pill">No sign up</span>
+        </div>
+      </div>
+
+      <section class="tool-panel" aria-label="QR code generator tool">
+        <div class="controls" style="margin-top: 0;">
+          <div class="field">
+            <label for="qrText">Text or URL</label>
+            <textarea id="qrText" rows="6" placeholder="https://example.com">https://example.com</textarea>
+            <span class="hint">Shorter text usually scans faster and works better on small printed QR codes.</span>
+          </div>
+          <div class="two-cols">
+            <div class="field">
+              <label for="qrSize">Size</label>
+              <input id="qrSize" type="number" min="160" max="1200" value="360">
+            </div>
+            <div class="field">
+              <label for="qrMargin">Margin</label>
+              <input id="qrMargin" type="number" min="0" max="8" value="2">
+            </div>
+          </div>
+          <div class="two-cols">
+            <div class="field">
+              <label for="darkColor">QR color</label>
+              <input id="darkColor" type="color" value="#172033">
+            </div>
+            <div class="field">
+              <label for="lightColor">Background</label>
+              <input id="lightColor" type="color" value="#ffffff">
+            </div>
+          </div>
+          <div class="field">
+            <label for="errorLevel">Error correction</label>
+            <select id="errorLevel">
+              <option value="M">Medium</option>
+              <option value="L">Low</option>
+              <option value="Q">Quartile</option>
+              <option value="H">High</option>
+            </select>
+          </div>
+          <button id="generateBtn">Generate QR Code</button>
+          <button id="downloadBtn" class="secondary" type="button" disabled>Download PNG</button>
+        </div>
+        <div class="qr-preview">
+          <div id="qrCanvas" class="qr-canvas" aria-label="Generated QR code"></div>
+        </div>
+        <p class="status" id="status">Enter text or a URL, then generate a QR code.</p>
+      </section>
+    </section>
+
+    <section class="content-section">
+      <h2>Create QR codes for everyday use</h2>
+      <p>Use this tool to turn links, short text, phone numbers, email addresses, or event details into a QR code. Download the PNG file and place it on posters, menus, labels, packaging, documents, or websites.</p>
+    </section>
+
+    <section class="content-section two-cols">
+      <div>
+        <h2>Tips for reliable scanning</h2>
+        <ul>
+          <li>Use a strong contrast between the QR color and background.</li>
+          <li>Keep enough white margin around the QR code.</li>
+          <li>Test the QR code with a phone before printing it.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Related tools</h2>
+        <div class="tool-grid">
+          <a href="compress-image.html"><strong>Compress Image</strong><span>Reduce image size before uploading QR graphics.</span></a>
+          <a href="resize-image.html"><strong>Resize Image</strong><span>Resize downloaded QR images for documents or labels.</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-tools" aria-label="All tools">
+    <a href="index.html">PDF to Image</a>
+    <a href="imgtopdf.html">Image to PDF</a>
+    <a href="merge-pdf.html">Merge PDF</a>
+    <a href="split-pdf.html">Split PDF</a>
+    <a href="rotate-pdf.html">Rotate PDF</a>
+    <a href="remove-pdf-pages.html">Remove Pages</a>
+    <a href="add-page-numbers.html">Page Numbers</a>
+    <a href="watermark-pdf.html">Watermark PDF</a>
+    <a href="compress-image.html">Compress Image</a>
+    <a href="resize-image.html">Resize Image</a>
+    <a href="convert-image.html">Convert Image</a>
+    <a href="qr-code-generator.html">QR Code Generator</a>
+  </div>
+  <div>All processing happens in your browser. Your files are not uploaded.</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const qrText = document.getElementById("qrText");
+      const qrSize = document.getElementById("qrSize");
+      const qrMargin = document.getElementById("qrMargin");
+      const darkColor = document.getElementById("darkColor");
+      const lightColor = document.getElementById("lightColor");
+      const errorLevel = document.getElementById("errorLevel");
+      const generateBtn = document.getElementById("generateBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
+      const qrCanvas = document.getElementById("qrCanvas");
+      const status = document.getElementById("status");
+
+      async function generateQr() {
+        const text = qrText.value.trim();
+        if (!text) {
+          status.textContent = "Please enter text or a URL first.";
+          downloadBtn.disabled = true;
+          return;
+        }
+        if (!window.QRCode) {
+          status.textContent = "QR code library is still loading. Please try again in a moment.";
+          downloadBtn.disabled = true;
+          return;
+        }
+        const width = Math.max(160, Math.min(1200, Number.parseInt(qrSize.value, 10) || 360));
+        const margin = Math.max(0, Math.min(8, Number.parseInt(qrMargin.value, 10) || 2));
+        try {
+          qrCanvas.innerHTML = "";
+          new QRCode(qrCanvas, {
+            text,
+            width,
+            height: width,
+            colorDark: darkColor.value,
+            colorLight: lightColor.value,
+            correctLevel: QRCode.CorrectLevel[errorLevel.value]
+          });
+          const generated = qrCanvas.querySelector("canvas, img");
+          if (generated) {
+            generated.style.padding = `${margin * 8}px`;
+            generated.style.background = lightColor.value;
+          }
+          status.textContent = "QR code generated. Download it as a PNG when ready.";
+          downloadBtn.disabled = false;
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Could not generate this QR code. Try shorter text.";
+          downloadBtn.disabled = true;
+        }
+      }
+
+      function downloadPng() {
+        const canvas = qrCanvas.querySelector("canvas");
+        if (!canvas) {
+          status.textContent = "Generate a QR code before downloading.";
+          return;
+        }
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "qr-code.png";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      }
+
+      generateBtn.addEventListener("click", generateQr);
+      downloadBtn.addEventListener("click", downloadPng);
+      [qrText, qrSize, qrMargin, darkColor, lightColor, errorLevel].forEach(input => {
+        input.addEventListener("change", generateQr);
+      });
+      generateQr();
+    });
+  </script>
+</body>
+</html>

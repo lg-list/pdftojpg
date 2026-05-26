@@ -44,4 +44,8 @@
     <loc>convert-image.html</loc>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>qr-code-generator.html</loc>
+    <priority>0.85</priority>
+  </url>
 </urlset>
