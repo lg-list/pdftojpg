@@ -17,6 +17,11 @@
     <meta property="og:image" content="https://pdftoimg.top/assets/og-image.png">
     <link rel="canonical" href="https://pdftoimg.top/">
     <meta property="og:url" content="https://pdftoimg.top/">
+    <script>
+        if (window.location.pathname.endsWith("/index.html")) {
+            window.location.replace("/");
+        }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%228%22 y1=%226%22 x2=%2258%22 y2=%2260%22%3E%3Cstop stop-color=%22%232457d6%22/%3E%3Cstop offset=%221%22 stop-color=%22%230f8b8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M20 10h18l10 10v34a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M38 10v10h10%22 fill=%22%23dce9ff%22/%3E%3Crect x=%2221%22 y=%2229%22 width=%2222%22 height=%2217%22 rx=%223%22 fill=%22%23eaf2ff%22/%3E%3Ccircle cx=%2227%22 cy=%2235%22 r=%223%22 fill=%22%232457d6%22/%3E%3Cpath d=%22m22 45 8-8 5 5 4-4 5 7H22Z%22 fill=%22%230f8b8d%22/%3E%3C/svg%3E">
     <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="tools.css">
@@ -32,6 +37,27 @@
       "name": "PDF Tools",
       "url": "https://pdftoimg.top/",
       "description": "Free browser-based PDF and image tools with private local processing."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Free PDF and image tools",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "PDF to Image", "url": "https://pdftoimg.top/"},
+        {"@type": "ListItem", "position": 2, "name": "Image to PDF", "url": "https://pdftoimg.top/imgtopdf.html"},
+        {"@type": "ListItem", "position": 3, "name": "Merge PDF", "url": "https://pdftoimg.top/merge-pdf.html"},
+        {"@type": "ListItem", "position": 4, "name": "Split PDF", "url": "https://pdftoimg.top/split-pdf.html"},
+        {"@type": "ListItem", "position": 5, "name": "Rotate PDF", "url": "https://pdftoimg.top/rotate-pdf.html"},
+        {"@type": "ListItem", "position": 6, "name": "Remove PDF Pages", "url": "https://pdftoimg.top/remove-pdf-pages.html"},
+        {"@type": "ListItem", "position": 7, "name": "Add Page Numbers", "url": "https://pdftoimg.top/add-page-numbers.html"},
+        {"@type": "ListItem", "position": 8, "name": "Watermark PDF", "url": "https://pdftoimg.top/watermark-pdf.html"},
+        {"@type": "ListItem", "position": 9, "name": "Compress Image", "url": "https://pdftoimg.top/compress-image.html"},
+        {"@type": "ListItem", "position": 10, "name": "Resize Image", "url": "https://pdftoimg.top/resize-image.html"},
+        {"@type": "ListItem", "position": 11, "name": "Convert Image", "url": "https://pdftoimg.top/convert-image.html"},
+        {"@type": "ListItem", "position": 12, "name": "QR Code Generator", "url": "https://pdftoimg.top/qr-code-generator.html"}
+      ]
     }
     </script>
     <style>
@@ -351,8 +377,8 @@
 <body>
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
-            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
-            <div class="nav-links"><a href="index.html" aria-current="page">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
+            <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">PDF Tools</span></a>
+            <div class="nav-links"><a href="/" aria-current="page">PDF to Image</a><a href="imgtopdf.html">Image to PDF</a><a href="merge-pdf.html">Merge PDF</a><a href="split-pdf.html">Split PDF</a><a href="compress-image.html">Compress Image</a></div>
         </nav>
     </header>
     <div class="container">
@@ -360,7 +386,7 @@
             <h1>100% Free PDF to Image Converter</h1>
         <div class="sub">
             100% Free - Secure & Private - <strong>No Server Storage</strong><br>
-            Convert PDF pages to PNG / JPEG images directly in your browser. Zero upload, zero tracking, nothing saved on any server.
+            Convert PDF pages to PNG / JPEG images directly in your browser. Your files are not uploaded to a conversion server.
             <span class="highlight">Totally Local & Safe</span>
         </header>
 
@@ -438,7 +464,7 @@
         </section>
         <footer>
             <div class="footer-tools" aria-label="All tools">
-                <a href="index.html">PDF to Image</a>
+                <a href="/">PDF to Image</a>
                 <a href="imgtopdf.html">Image to PDF</a>
                 <a href="merge-pdf.html">Merge PDF</a>
                 <a href="split-pdf.html">Split PDF</a>
@@ -450,8 +476,9 @@
                 <a href="resize-image.html">Resize Image</a>
                 <a href="convert-image.html">Convert Image</a>
                 <a href="qr-code-generator.html">QR Code Generator</a>
+    <a href="privacy.html">Privacy</a>
             </div>
-            Powered by PDF.js + JSZip - All conversion happens in your browser. No file upload, no data leaves your
+            Powered by PDF.js + JSZip - All conversion happens in your browser. No file upload for conversion; generated files stay on your
             device. 
             <br>
             Fast loading with deferred scripts.
